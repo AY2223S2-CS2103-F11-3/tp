@@ -15,6 +15,7 @@ import seedu.vms.logic.commands.ExitCommand;
 import seedu.vms.logic.commands.FindCommand;
 import seedu.vms.logic.commands.HelpCommand;
 import seedu.vms.logic.commands.ListCommand;
+import seedu.vms.logic.commands.RemarkCommand;
 import seedu.vms.logic.parser.exceptions.ParseException;
 
 /**
@@ -67,6 +68,9 @@ public class AddressBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case RemarkCommand.COMMAND_WORD:
+            return new RemarkCommandParser().parse(arguments);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
